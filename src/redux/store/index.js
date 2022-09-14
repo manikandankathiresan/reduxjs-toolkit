@@ -4,12 +4,12 @@ import createSagaMiddleware from "redux-saga";
 import logger from "redux-logger";
 import rootSaga from "../saga";
 import { persistReducer } from "redux-persist";
-import localforage from "localforage";
+import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
   key: "reduxPersistState",
   timeout: 0,
-  storage: localforage,
+  storage: storage,
   whitelist: ["login", "counter"],
 };
 
